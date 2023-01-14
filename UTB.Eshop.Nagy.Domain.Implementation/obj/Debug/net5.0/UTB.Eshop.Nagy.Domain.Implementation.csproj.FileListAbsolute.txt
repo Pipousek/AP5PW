@@ -1,0 +1,15 @@
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.deps.json
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.pdb
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.pdb
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.csproj.AssemblyReference.cache
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.AssemblyInfoInputs.cache
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.AssemblyInfo.cs
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.csproj.CoreCompileInputs.cache
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.csproj.CopyComplete
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\refint\UTB.Eshop.Nagy.Domain.Implementation.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Implementation.pdb
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Implementation\obj\Debug\net5.0\ref\UTB.Eshop.Nagy.Domain.Implementation.dll

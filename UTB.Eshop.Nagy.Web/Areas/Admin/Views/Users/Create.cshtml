@@ -1,0 +1,164 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Identity.User
+
+@{
+    string firstNameCZEN, lastnameCZEN, usernameCZEN, normalizedUsernameCZEN;
+    string emailCZEN, normalizedEmailCZEN, emailConfirmCZEN;
+    string passHashCZEN, secureStampCZEN, concurrencyStampCZEN;
+    string phoneCZEN, phoneConfirmCZEN, twoFacCZEN;
+    string lockoutEndCZEN, lockoutEnableCZEN, accessFailCountCZEN;
+    string buttonBack, buttonSave;
+    string titleCZEN, userCZEN;
+
+    if (LanguageConfig.Language == "EN")
+    {
+        firstNameCZEN = "First Name";
+        lastnameCZEN = "Last Name";
+        usernameCZEN = "Username";
+        normalizedUsernameCZEN = "Normalized Username";
+        emailCZEN = "E-mail";
+        normalizedEmailCZEN = "Normalized E-mail";
+        emailConfirmCZEN = "E-mail Confirm";
+        passHashCZEN = "Password Hash";
+        secureStampCZEN = "Security Stamp";
+        concurrencyStampCZEN = "Concurrency Stamp";
+        phoneCZEN = "Phone";
+        phoneConfirmCZEN = "Phone Confirm";
+        twoFacCZEN = "Two-Factor Authentication";
+        lockoutEndCZEN = "Lockout Endpoint";
+        lockoutEnableCZEN = "Lockout Endpoint Enable";
+        accessFailCountCZEN = "Access Fail Count";
+        buttonBack = "Back to list";
+        buttonSave = "Submit";
+        titleCZEN = "Create User";
+        userCZEN = "User";
+    }
+    else
+    {
+        firstNameCZEN = "Jméno";
+        lastnameCZEN = "Příjmení";
+        usernameCZEN = "Uživatelské jméno";
+        normalizedUsernameCZEN = "Normalizované uživatelské jméno";
+        emailCZEN = "E-mail";
+        normalizedEmailCZEN = "Normalizovaný e-mail";
+        emailConfirmCZEN = "E-mail potvrzen";
+        passHashCZEN = "Hash uživatelského hesla";
+        secureStampCZEN = "Bezpečnostní razítko";
+        concurrencyStampCZEN = "Souběžné razítko";
+        phoneCZEN = "Telefon";
+        phoneConfirmCZEN = "Telefon potvrzen";
+        twoFacCZEN = "Dvoufaktorová autentizace";
+        lockoutEndCZEN = "Uzamčení koncového bodu";
+        lockoutEnableCZEN = "Uzamčení koncového bodu povoleno";
+        accessFailCountCZEN = "Počet selhání přístupu";
+        buttonBack = "Zpět na seznam";
+        buttonSave = "Potvrdit";
+        titleCZEN = "Vytvořit uřivatele";
+        userCZEN = "Uživatel";
+    }
+    ViewData["Title"] = "Create";
+}
+
+<h1>@titleCZEN</h1>
+
+<h4>@userCZEN</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">@firstNameCZEN</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">@lastnameCZEN</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label">@usernameCZEN</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NormalizedUserName" class="control-label">@normalizedUsernameCZEN</label>
+                <input asp-for="NormalizedUserName" class="form-control" />
+                <span asp-validation-for="NormalizedUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">@emailCZEN</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NormalizedEmail" class="control-label">@normalizedEmailCZEN</label>
+                <input asp-for="NormalizedEmail" class="form-control" />
+                <span asp-validation-for="NormalizedEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="EmailConfirmed" />
+                    @emailConfirmCZEN
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PasswordHash" class="control-label">@passHashCZEN</label>
+                <input asp-for="PasswordHash" class="form-control" />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecurityStamp" class="control-label">@secureStampCZEN</label>
+                <input asp-for="SecurityStamp" class="form-control" />
+                <span asp-validation-for="SecurityStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConcurrencyStamp" class="control-label">@concurrencyStampCZEN</label>
+                <input asp-for="ConcurrencyStamp" class="form-control" />
+                <span asp-validation-for="ConcurrencyStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">@phoneCZEN</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PhoneNumberConfirmed" /> 
+                    @phoneConfirmCZEN
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TwoFactorEnabled" /> 
+                    @twoFacCZEN
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="LockoutEnd" class="control-label">@lockoutEndCZEN</label>
+                <input asp-for="LockoutEnd" class="form-control" />
+                <span asp-validation-for="LockoutEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="LockoutEnabled" /> 
+                    @lockoutEnableCZEN
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccessFailedCount" class="control-label">@accessFailCountCZEN</label>
+                <input asp-for="AccessFailedCount" class="form-control" />
+                <span asp-validation-for="AccessFailedCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@buttonSave" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@buttonBack</a>
+</div>
+

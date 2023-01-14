@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6DjMxVRhpIBm6ERGo3oAjTJU4hap5LnJ0qqi4z8nS7gPsqEEuDM1CH3n3Rjlzzl2cJJb7MlwCAETMjCxZFLdlg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Petr\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Petr\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

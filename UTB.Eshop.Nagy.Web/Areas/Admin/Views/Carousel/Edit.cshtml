@@ -1,0 +1,27 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model CarouselItem
+@{
+    string title;
+    if(LanguageConfig.Language == "EN")
+    {
+        title = "Edit Carousel Item";
+    }
+    else
+    {
+        title = "Úprava položky Carouselu";
+    }
+
+    ViewData["Title"] = @title;
+}
+<h1>@ViewData["Title"]</h1>
+
+@{
+    ViewBag.Action = "Edit";
+}
+<partial name="CreateEditForm" model="Model" />
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/FileContentValidation.js"></script>
+}

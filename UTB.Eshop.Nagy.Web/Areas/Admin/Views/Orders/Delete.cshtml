@@ -1,0 +1,75 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.Order
+
+@{
+    string buttonDelete, buttonBack, confirmCZEN, orderCZEN;
+    string dateTimeCZEN, orderNumberCZEN, totalPriceCZEN, userCZEN;
+
+    if (LanguageConfig.Language == "EN")
+	{
+		buttonDelete = "Delete";
+		buttonBack = "Back to list";
+		confirmCZEN = "Are you sure you want to delete this?";
+		orderCZEN = "Order";
+        dateTimeCZEN = "Date and time of purchase";
+        orderNumberCZEN = "Order number";
+        totalPriceCZEN = "Total price";
+        userCZEN = "User ID";
+	}
+	else
+	{
+		buttonDelete = "Smazat";
+		buttonBack = "Zpět na seznam";
+		confirmCZEN = "Jste si jistí, že chcete smazat tuto položku?";
+		orderCZEN = "Objednávka";
+        dateTimeCZEN = "Datum a čas vytvoření objednávky";
+        orderNumberCZEN = "Číslo objednávky";
+        totalPriceCZEN = "Celková cena";
+        userCZEN = "ID uživatele";
+	}
+    ViewData["Title"] = "Delete";
+}
+
+<h1>@buttonDelete</h1>
+
+<h3>@confirmCZEN</h3>
+<div>
+    <h4>@orderCZEN</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.DateTimeCreated) -->
+            @dateTimeCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateTimeCreated)
+        </dd>
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.OrderNumber) -->
+            @orderNumberCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.TotalPrice) -->
+            @totalPriceCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.User) -->
+            @userCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="@buttonDelete" class="btn btn-danger" /> |
+        <a asp-action="Index">@buttonBack</a>
+    </form>
+</div>

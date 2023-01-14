@@ -1,0 +1,182 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model IEnumerable<UTB.Eshop.Nagy.Web.Models.Identity.User>
+
+@{
+    string createCZEN, titleCZEN;
+    string buttonEdit, buttonDelete, buttonDetail;
+    string firstNameCZEN, lastnameCZEN, usernameCZEN, normalizedUsernameCZEN;
+    string emailCZEN, normalizedEmailCZEN, emailConfirmCZEN;
+    string passHashCZEN, secureStampCZEN, concurrencyStampCZEN;
+    string phoneCZEN, phoneConfirmCZEN, twoFacCZEN;
+    string lockoutEndCZEN, lockoutEnableCZEN, accessFailCountCZEN;
+
+    if (LanguageConfig.Language == "EN")
+    {
+        createCZEN = "Create New User";
+        titleCZEN = "Users";
+        buttonEdit = "Edit";
+        buttonDelete = "Delete";
+        buttonDetail = "Details";
+        firstNameCZEN = "First Name";
+        lastnameCZEN = "Last Name";
+        usernameCZEN = "Username";
+        normalizedUsernameCZEN = "Normalized Username";
+        emailCZEN = "E-mail";
+        normalizedEmailCZEN = "Normalized E-mail";
+        emailConfirmCZEN = "E-mail Confirm";
+        passHashCZEN = "Password Hash";
+        secureStampCZEN = "Security Stamp";
+        concurrencyStampCZEN = "Concurrency Stamp";
+        phoneCZEN = "Phone";
+        phoneConfirmCZEN = "Phone Confirm";
+        twoFacCZEN = "Two-Factor Authentication";
+        lockoutEndCZEN = "Lockout Endpoint";
+        lockoutEnableCZEN = "Lockout Endpoint Enable";
+        accessFailCountCZEN = "Access Fail Count";
+    }
+    else
+    {
+        createCZEN = "Vytvořit nového uřivatele";
+        titleCZEN = "Uživatelé";
+        buttonEdit = "Upravit";
+        buttonDelete = "Smazat";
+        buttonDetail = "Podrobnosti";
+        firstNameCZEN = "Jméno";
+        lastnameCZEN = "Příjmení";
+        usernameCZEN = "Uživatelské jméno";
+        normalizedUsernameCZEN = "Normalizované uživatelské jméno";
+        emailCZEN = "E-mail";
+        normalizedEmailCZEN = "Normalizovaný e-mail";
+        emailConfirmCZEN = "E-mail potvrzen";
+        passHashCZEN = "Hash uživatelského hesla";
+        secureStampCZEN = "Bezpečnostní razítko";
+        concurrencyStampCZEN = "Souběžné razítko";
+        phoneCZEN = "Telefon";
+        phoneConfirmCZEN = "Telefon potvrzen";
+        twoFacCZEN = "Dvoufaktorová autentizace";
+        lockoutEndCZEN = "Uzamčení koncového bodu";
+        lockoutEnableCZEN = "Uzamčení koncového bodu povoleno";
+        accessFailCountCZEN = "Počet selhání přístupu";
+    }
+    ViewData["Title"] = "Index";
+}
+
+<h1>@titleCZEN</h1>
+
+<p>
+    <a asp-action="Create">@createCZEN</a>
+</p>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th class="align-middle">
+                @firstNameCZEN
+            </th>
+            <th class="align-middle">
+                @lastnameCZEN
+            </th>
+            <th class="align-middle">
+                @usernameCZEN
+            </th>
+            <th class="align-middle">
+                @normalizedUsernameCZEN
+            </th>
+            <th class="align-middle">
+                @emailCZEN
+            </th>
+            <th class="align-middle">
+                @normalizedEmailCZEN
+            </th>
+            <th class="align-middle">
+                @emailConfirmCZEN
+            </th>
+            <th class="align-middle">
+                @passHashCZEN
+            </th>
+            <th class="align-middle">
+                @secureStampCZEN
+            </th>
+            <th class="align-middle">
+                @concurrencyStampCZEN
+            </th>
+            <th class="align-middle">
+                @phoneCZEN
+            </th>
+            <th class="align-middle">
+                @phoneConfirmCZEN
+            </th>
+            <th class="align-middle">
+                @twoFacCZEN
+            </th>
+            <th class="align-middle">
+                @lockoutEndCZEN
+            </th>
+            <th class="align-middle">
+                @lockoutEnableCZEN
+            </th>
+            <th class="align-middle">
+                @accessFailCountCZEN
+            </th>
+            <th class="align-middle"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NormalizedUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NormalizedEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PasswordHash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecurityStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConcurrencyStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LockoutEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LockoutEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessFailedCount)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@buttonEdit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@buttonDetail</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@buttonDelete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

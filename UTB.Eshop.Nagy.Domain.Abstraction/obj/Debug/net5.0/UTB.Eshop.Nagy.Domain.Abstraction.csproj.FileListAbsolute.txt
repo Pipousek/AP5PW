@@ -1,0 +1,12 @@
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.deps.json
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.pdb
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.csproj.AssemblyReference.cache
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.AssemblyInfoInputs.cache
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.AssemblyInfo.cs
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.csproj.CoreCompileInputs.cache
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\refint\UTB.Eshop.Nagy.Domain.Abstraction.dll
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.pdb
+C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\ref\UTB.Eshop.Nagy.Domain.Abstraction.dll

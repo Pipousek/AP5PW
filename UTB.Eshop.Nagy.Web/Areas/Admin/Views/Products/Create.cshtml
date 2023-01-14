@@ -1,0 +1,102 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.Product
+
+@{
+    string createCZEN, productsCZEN;
+    string nameEN, nameCZ, priceCZEN, imgSrcCZEN, descImgSrcCZEN;
+    string descEN, descCZ, warrantyCZEN;
+    string buttonSave, buttonBack;
+
+    if (LanguageConfig.Language == "EN")
+    {
+        createCZEN = "Create New Product";
+        productsCZEN = "Product";
+        nameEN = "Product Name - EN";
+        nameCZ = "Product Name - CZ";
+        priceCZEN = "Price";
+        imgSrcCZEN = "Image Source";
+        descImgSrcCZEN = "Description Img. Source";
+        descEN = "Description - EN";
+        descCZ = "Description - CZ";
+        warrantyCZEN = "Warranty";
+        buttonSave = "Submit";
+        buttonBack = "Back to list";
+    }
+    else
+    {
+        createCZEN = "Vytvořit nový produkt";
+        productsCZEN = "Produkt";
+        nameEN = "Název produktu - EN";
+        nameCZ = "Název produktu - CZ";
+        priceCZEN = "Cena";
+        imgSrcCZEN = "Cesta obrázku";
+        descImgSrcCZEN = "Cesta obrázku podrobnosti";
+        descEN = "Podrobnosti - EN";
+        descCZ = "Podrobnosti - CZ";
+        warrantyCZEN = "Záruka";
+        buttonSave = "Potvrdit";
+        buttonBack = "Zpět na seznam";
+    }
+
+    ViewData["Title"] = "Create";
+}
+
+<h1>@createCZEN</h1>
+
+<h4>@productsCZEN</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameCZ" class="control-label">@nameCZ</label>
+                <input asp-for="NameCZ" class="form-control" />
+                <span asp-validation-for="NameCZ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameEN" class="control-label">@nameEN</label>
+                <input asp-for="NameEN" class="form-control" />
+                <span asp-validation-for="NameEN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">@priceCZEN</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imageSrc" class="control-label">@imgSrcCZEN</label>
+                <input asp-for="imageSrc" class="form-control" />
+                <span asp-validation-for="imageSrc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionImageSrc" class="control-label">@descImgSrcCZEN</label>
+                <input asp-for="DescriptionImageSrc" class="form-control" />
+                <span asp-validation-for="DescriptionImageSrc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionCZ" class="control-label">@descCZ</label>
+                <textarea asp-for="DescriptionCZ" class="form-control"></textarea>
+                <span asp-validation-for="DescriptionCZ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionEN" class="control-label">@descEN</label>
+                <textarea asp-for="DescriptionEN" class="form-control"></textarea>
+                <span asp-validation-for="DescriptionEN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warranty" class="control-label">@warrantyCZEN</label>
+                <input asp-for="Warranty" class="form-control" />
+                <span asp-validation-for="Warranty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@buttonSave" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@buttonBack</a>
+</div>
+

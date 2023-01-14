@@ -1,0 +1,87 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model IEnumerable<UTB.Eshop.Nagy.Web.Models.Entities.OrderItem>
+
+@{
+	string orderItemsCZEN, createNewItemCZEN;
+	string buttonEdit, buttonDelete, buttonDetail;
+	string amountCZEN, priceCZEN, orderCZEN, productCZEN;
+	if (LanguageConfig.Language == "EN")
+	{
+		orderItemsCZEN = "Order items";
+		createNewItemCZEN = "Create new order item";
+		buttonEdit = "Edit";
+		buttonDelete = "Delete";
+		buttonDetail = "Details";
+		amountCZEN = "Amount";
+		priceCZEN = "Price";
+		orderCZEN = "Order";
+		productCZEN = "Product ID";
+	}
+	else
+	{
+		orderItemsCZEN = "Objednané položky";
+		createNewItemCZEN = "Vytvořit novou objednávku položky";
+		buttonEdit = "Upravit";
+		buttonDelete = "Smazat";
+		buttonDetail = "Podrobnosti";
+		amountCZEN = "Množství";
+		priceCZEN = "Cena";
+		orderCZEN = "Objednávka";
+		productCZEN = "ID Produktu";
+	}
+
+	ViewData["Title"] = "Index";
+}
+
+<h1>@orderItemsCZEN</h1>
+
+<p>
+	<a asp-action="Create">@createNewItemCZEN</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				<!-- @Html.DisplayNameFor(model => model.Amount) -->
+				@amountCZEN
+			</th>
+			<th>
+				<!-- @Html.DisplayNameFor(model => model.Price) -->
+				@priceCZEN
+			</th>
+			<th>
+				<!-- @Html.DisplayNameFor(model => model.Order) -->
+				@orderCZEN
+			</th>
+			<th>
+				<!-- @Html.DisplayNameFor(model => model.Product) -->
+				@productCZEN
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Amount)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Price)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Order.OrderNumber)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Product.ID)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ID">@buttonEdit</a> |
+					<a asp-action="Details" asp-route-id="@item.ID">@buttonDetail</a> |
+					<a asp-action="Delete" asp-route-id="@item.ID">@buttonDelete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

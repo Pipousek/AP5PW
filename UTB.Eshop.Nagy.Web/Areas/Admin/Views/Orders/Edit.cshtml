@@ -1,0 +1,66 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.Order
+
+@{
+    string orderNumberCZEN, totalPriceCZEN, userCZEN;
+    string editCZEN, orderCZEN;
+    string buttonSave, buttonBack;
+    if(LanguageConfig.Language == "EN")
+    {
+        orderNumberCZEN = "Order number";
+        totalPriceCZEN = "Total price";
+        userCZEN = "User ID";
+        editCZEN = "Edit Order";
+        orderCZEN = "Order";
+        buttonSave = "Save";
+        buttonBack = "Back to list";
+    }
+    else
+    {
+        orderNumberCZEN = "Číslo objednávky";
+        totalPriceCZEN = "Celková cena";
+        userCZEN = "ID uživatele";
+        editCZEN = "Úpravit objednávku";
+        orderCZEN = "Objednávka";
+        buttonSave = "Uložit";
+        buttonBack = "Zpět na seznam";
+    }
+
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@editCZEN</h1>
+
+<h4>@orderCZEN</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="OrderNumber" class="control-label">@orderNumberCZEN</label>
+                <input asp-for="OrderNumber" class="form-control" />
+                <span asp-validation-for="OrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label">@totalPriceCZEN</label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label">@userCZEN</label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@buttonSave" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@buttonBack</a>
+</div>
+

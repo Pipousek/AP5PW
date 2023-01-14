@@ -1,0 +1,74 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model LoginViewModel
+@{
+    string signCZEN, signFB, signGoogle, orCZEN, loginFail;
+    string title, signUp;
+    string placeholderUsername, placeholderPassword;
+
+    if(LanguageConfig.Language == "EN")
+    {
+        signCZEN = "Sign in";
+        signFB = "Sign in with Facebook";
+        signGoogle = "Sign in with Google+";
+        orCZEN = "OR";
+        loginFail = "Login Failed!";
+        title = "Sign in";
+        signUp = "Sign up new account";
+        placeholderUsername = "Username";
+        placeholderPassword = "Password";
+    }
+    else
+    {
+        signCZEN = "Přihlásit se";
+        signFB = "Přihlásit se přes Facebook";
+        signGoogle = "Přihlásit se přes Google+";
+        orCZEN = "NEBO";
+        loginFail = "Příhlášení se nezdařilo!";
+        title = "Přihlášení";
+        signUp = "Zaregistrujte si nový účet";
+        placeholderUsername = "Uživatelské jméno";
+        placeholderPassword = "Heslo";
+    }
+
+    ViewData["Title"] = "Login";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
+<div id="logreg-forms">
+    <form asp-action="Login" method="post" class="form-signin">
+        <br />
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">@title</h1>
+        <div class="social-login">
+            <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i>@signFB</span> </button>
+            <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i>@signGoogle</span> </button>
+        </div>
+        <br />
+        <p style="text-align:center">@orCZEN</p>
+        <hr>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @{
+            if (Model?.LoginFailed == true)
+            {
+                <div class="text-danger">@loginFail</div>
+            }
+         }
+
+
+        <input asp-for="Username" type="text" id="inputUsername" class="form-control" placeholder="@placeholderUsername" autofocus="">
+        <span asp-validation-for="Username" class="text-danger"></span>
+        <input asp-for="Password" type="password" id="inputPassword" class="form-control" placeholder="@placeholderPassword">
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <br />
+
+        <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>@signCZEN</button>
+        <br />
+        <br />
+        <hr>
+        <!-- <p>Don't have an account!</p>  -->
+        <a asp-action="Register" class="btn btn-primary btn-block text-white" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>@signUp</a>
+    </form>
+</div>

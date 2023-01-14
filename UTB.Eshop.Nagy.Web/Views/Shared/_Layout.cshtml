@@ -1,0 +1,155 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@{
+	string privacyName, homeName, carouselName, productName, orderName, orderItemName;
+	string userName, myOrderName, approveCurOrderName, signUpName, loginName, logoutName, loggedName;
+	if (LanguageConfig.Language == "EN")
+	{
+		privacyName = "Privacy";
+		homeName = "Home";
+		carouselName = "Carousel";
+		productName = "Products";
+		orderName = "Orders";
+		orderItemName = "Orders Items";
+		userName = "Users";
+		myOrderName = "My Orders";
+		approveCurOrderName = "Approve Current Order";
+		signUpName = "Sign Up";
+		loginName = "Login";
+		logoutName = "Logout";
+		loggedName = "Logged as";
+	}
+	else // LanguageConfig.Language == "CZ"
+	{
+		privacyName = "Soukromí";
+		homeName = "Domů";
+		carouselName = "Carousel";
+		productName = "Produkty";
+		orderName = "Objednávky";
+		orderItemName = "Objednané zboží";
+		userName = "Uživatele";
+		myOrderName = "Mé Objednávky";
+		approveCurOrderName = "Potvrdit objednávku";
+		signUpName = "Registrovat se";
+		loginName = "Přihlásit";
+		logoutName = "Odhlásit se";
+		loggedName = "Přihlášen jako";
+	}
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - UTB.Eshop.Nagy.Web</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+	@await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UTB.Eshop.Web</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@homeName</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@privacyName</a>
+						</li>
+						@if (User.Identity.IsAuthenticated == true && (User.IsInRole(Roles.Admin.ToString()) || User.IsInRole(Roles.Manager.ToString())))
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Carousel" asp-action="Select">@carouselName</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Products" asp-action="Index">@productName</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Orders" asp-action="Index">@orderName</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="Admin" asp-controller="OrderItems" asp-action="Index">@orderItemName</a>
+							</li>
+						}
+						@if (User.Identity.IsAuthenticated == true && User.IsInRole(Roles.Admin.ToString()))
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="Index">@userName</a>
+							</li>
+						}
+						@if (User.Identity.IsAuthenticated == true && (User.IsInRole(Roles.Customer.ToString())))
+						{
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">@myOrderName</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item">
+										<a class="nav-link text-dark" asp-area="Customer" asp-controller="CustomerOrders" asp-action="Index">@myOrderName</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link text-dark" asp-area="Customer" asp-controller="CustomerOrderNotCart" asp-action="ApproveOrderInSession">@approveCurOrderName</a>
+									</li>
+								</ul>
+							</li>
+						}
+					</ul>
+					<ul class="navbar-nav navbar-right">
+						@{
+							double totalPrice = 0;
+							string totalPriceString = "TotalPrice";
+							if (Context.Session.IsAvailable && Context.Session.Keys.Contains(totalPriceString))
+							{
+								totalPrice = Context.Session.GetDouble(totalPriceString).GetValueOrDefault();
+							}
+							<li class="navbar-text"><a id="total_price" class="label" style="color:red;">@totalPrice.ToString("C2")</a></li>
+						}
+					</ul>
+					@{
+						@if (User.Identity.IsAuthenticated == false)
+						{
+							<ul class="navbar-nav navbar-right">
+								<li class="nav-item"><a class="nav-link text-dark" asp-area="Security" asp-controller="Account" asp-action="Register"><span class="glyphicon"></span>@signUpName</a></li>
+								<li class="nav-item"><a class="nav-link text-dark" asp-area="Security" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>@loginName</a></li>
+							</ul>
+						}
+						else
+						{
+							<ul class="nav navbar-nav navbar-right">
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">@loggedName @User.Identity.Name</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link text-dark" asp-area="Security" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-out"></span>@logoutName</a></li>
+									</ul>
+								</li>
+							</ul>
+						}
+						<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SwitchLanguage">@LanguageConfig.Language</a>
+					}
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="parallax">
+		<div class="container no-parallax">
+			<main role="main" class="pb-3">
+				@RenderBody()
+			</main>
+		</div>
+	</div>
+
+	<footer class="border-top footer text-muted no-parallax-footer">
+		<div class="container">
+			&copy; 2022 - UTB.Eshop.Nagy.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">@privacyName</a>
+		</div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

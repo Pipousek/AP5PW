@@ -1,0 +1,113 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model IList<Order>
+@{
+    string title, nameCZEN, productNameCZEN, priceCZEN, amountCZEN;
+    string id = "ID", orderNum, totalPrice, dateTime, username;
+    string detailCZEN, itemsOrderCZEN, warrantyCZEN;
+
+    if(LanguageConfig.Language == "EN")
+    {
+        title = "My Orders";
+        nameCZEN = "Product name";
+        productNameCZEN = "NameEN";
+        priceCZEN = "Price";
+        amountCZEN = "Amount";
+        orderNum = "Order number";
+        totalPrice = "Total price";
+        dateTime = "Date & Time of purchase";
+        username = "Username";
+        detailCZEN = "Order detail";
+        itemsOrderCZEN = "Order items";
+        warrantyCZEN = "Warranty";
+    }
+    else
+    {
+        title = "Mé objednávky";
+        nameCZEN = "Název produktu";
+        productNameCZEN = "NameCZ";
+        priceCZEN = "Cena";
+        amountCZEN = "Množství";
+        orderNum = "Číslo objednávky";
+        totalPrice = "Celková cena";
+        dateTime = "Datum a čas vytvoření";
+        username = "Uživatelké jméno";
+        detailCZEN = "Podrobnosti objednávky";
+        itemsOrderCZEN = "Objednané zboží";
+        warrantyCZEN = "Záruka";
+    }
+
+    ViewData["Title"] = title;
+}
+<h2>@ViewData["Title"]</h2>
+
+<br />
+
+@{
+    if (Model != null && Model != null && Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <table style="width:100%" class="table table-responsive table-striped table-bordered">
+                <tr>
+                    <th class="col-sm-1">@id</th>
+                    <th class="col-sm-2">@orderNum</th>
+                    <th class="col-sm-3">@totalPrice</th>
+                    <th class="col-sm-3">@dateTime</th>
+                    <th class="col-sm-3">@username</th>
+                </tr>
+                <tr>
+                    <td class="col-sm-1">@item.ID</td>
+                    <td class="col-sm-2">@item.OrderNumber</td>
+                    <td class="col-sm-3">@item.TotalPrice.ToString("C2")</td>
+                    <td class="col-sm-3">@item.DateTimeCreated</td>
+                    <td class="col-sm-3">@item.User.UserName</td>
+                </tr>
+
+
+            </table>
+
+            <details>
+                <summary>@detailCZEN</summary>
+                <div id="order_items_@item.ID">
+                    <h4>@itemsOrderCZEN</h4>
+                    <table style="width:49%" class="table table-responsive table-bordered">
+                        <tr>
+                            <th class="col-sm-4">@nameCZEN</th>
+                            <th class="col-sm-1">@amountCZEN</th>
+                            <th class="col-sm-1">@warrantyCZEN</th>
+                            <th class="col-sm-2">@priceCZEN</th>
+                        </tr>
+
+                        @{
+                            foreach (var itemOrderItems in item.OrderItems)
+                            {
+                                <tr>
+                                    @{
+                                        if(LanguageConfig.Language == "EN") 
+                                        {
+                                            <td class="col-sm-4">@itemOrderItems.Product.NameEN</td>
+                                        }
+                                        else 
+                                        {
+                                            <td class="col-sm-4">@itemOrderItems.Product.NameCZ</td>
+                                        }
+                                    }
+                                    <td class="col-sm-1">@itemOrderItems.Amount</td>
+                                    <td class="col-sm-1">@itemOrderItems.Product.Warranty</td>
+                                    <td class="col-sm-2">@itemOrderItems.Price.ToString("C2")</td>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </details>
+            <br />
+            <br />
+            <br />
+        }
+    }
+    else
+    {
+        <h2>Orders are empty!</h2>
+    }
+}

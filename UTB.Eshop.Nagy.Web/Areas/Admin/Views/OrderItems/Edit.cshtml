@@ -1,0 +1,73 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.OrderItem
+
+@{
+    string editCZEN, orderItemCZEN;
+    string buttonSave, buttonBack;
+    string orderIDCZEN, productIDCZEN, amountCZEN, priceCZEN;
+    if(LanguageConfig.Language == "EN")
+    {
+        editCZEN = "Edit";
+        orderItemCZEN = "Order Item";
+        buttonSave = "Save";
+        buttonBack = "Back to list";
+        orderIDCZEN = "Order ID";
+        productIDCZEN = "Product ID";
+        amountCZEN = "Amount";
+        priceCZEN = "Price";
+    }
+    else
+    {
+        editCZEN = "Úprava";
+        orderItemCZEN = "Objednaná položka";
+        buttonSave = "Uložit";
+        buttonBack = "Zpět na seznam";
+        orderIDCZEN = "ID Objednávky";
+        productIDCZEN = "ID Produktu";
+        amountCZEN = "Množství";
+        priceCZEN = "Cena";
+    }
+
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@editCZEN</h1>
+
+<h4>@orderItemCZEN</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="OrderID" class="control-label">@orderIDCZEN</label>
+                <select asp-for="OrderID" class="form-control" asp-items="ViewBag.OrderID"></select>
+                <span asp-validation-for="OrderID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductID" class="control-label">@productIDCZEN</label>
+                <select asp-for="ProductID" class="form-control" asp-items="ViewBag.ProductID"></select>
+                <span asp-validation-for="ProductID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label">@amountCZEN</label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">@priceCZEN</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@buttonSave" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@buttonBack</a>
+</div>
+

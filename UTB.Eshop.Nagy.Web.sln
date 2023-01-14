@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTB.Eshop.Nagy.Web", "UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Web.csproj", "{944487B0-39F6-4C96-ABA7-24F97607DE88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTB.Eshop.Nagy.Domain.Abstraction", "UTB.Eshop.Nagy.Domain.Abstraction\UTB.Eshop.Nagy.Domain.Abstraction.csproj", "{E84D152D-B695-4F9B-AA2A-8399CF947B19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTB.Eshop.Nagy.Domain.Implementation", "UTB.Eshop.Nagy.Domain.Implementation\UTB.Eshop.Nagy.Domain.Implementation.csproj", "{82A1FC96-DE12-4DC7-AA50-0B568F50E248}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTB.Eshop.Nagy.Tests", "UTB.Eshop.Nagy.Tests\UTB.Eshop.Nagy.Tests.csproj", "{4C655151-8348-4A38-B4EF-77E0C16AEAAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Položky řešení", "Položky řešení", "{6546507C-CD2A-4402-998E-EAC864A23EAE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{944487B0-39F6-4C96-ABA7-24F97607DE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944487B0-39F6-4C96-ABA7-24F97607DE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944487B0-39F6-4C96-ABA7-24F97607DE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944487B0-39F6-4C96-ABA7-24F97607DE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E84D152D-B695-4F9B-AA2A-8399CF947B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84D152D-B695-4F9B-AA2A-8399CF947B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84D152D-B695-4F9B-AA2A-8399CF947B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E84D152D-B695-4F9B-AA2A-8399CF947B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A1FC96-DE12-4DC7-AA50-0B568F50E248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A1FC96-DE12-4DC7-AA50-0B568F50E248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A1FC96-DE12-4DC7-AA50-0B568F50E248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A1FC96-DE12-4DC7-AA50-0B568F50E248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C655151-8348-4A38-B4EF-77E0C16AEAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C655151-8348-4A38-B4EF-77E0C16AEAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C655151-8348-4A38-B4EF-77E0C16AEAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C655151-8348-4A38-B4EF-77E0C16AEAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD18A1C5-508E-4185-A53B-C84D6C4C9557}
+	EndGlobalSection
+EndGlobal

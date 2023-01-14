@@ -1,0 +1,57 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model CarouselItem
+
+@{
+    string imageCZEN, imgAltCZ, imgAltEN, imgAltPlaceholderCZEN, buttonName;
+    if(LanguageConfig.Language == "EN")
+    {
+        imageCZEN = "Select Image";
+        imgAltCZ = "Image Alternative Text - CZ";
+        imgAltEN = "Image Alternative Text - EN";
+        imgAltPlaceholderCZEN = "Enter Image Alternative Text";
+        buttonName = "Submit";
+    }
+    else
+    {
+        imageCZEN = "Vyberte Obrázek";
+        imgAltCZ = "Alternativní text obrázku - CZ";
+        imgAltEN = "Alternativní text obrázku - EN";
+        imgAltPlaceholderCZEN = "Vložte Alternativní text obrázku";
+        buttonName = "Potvrdit";
+    }
+}
+
+<form asp-action="@ViewBag.Action" method="post" enctype="multipart/form-data">
+    @{
+        if (ViewBag.Action == "Edit")
+        { 
+            <input asp-for="ID" type="hidden" />
+        }
+    }
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label>@imageCZEN</label>
+        @{
+            if (ViewBag.Action == "Edit")
+            {
+                <input asp-for="Image" class="form-control-file">
+            }
+            else
+            {
+                <input asp-for="Image" class="form-control-file" data-val-required="The Image field is required.">
+            }
+        }
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>@imgAltCZ</label>
+        <input asp-for="ImageAltCZ" class="form-control" placeholder="@imgAltPlaceholderCZEN">
+        <span asp-validation-for="ImageAltCZ" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>@imgAltEN</label>
+        <input asp-for="ImageAltEN" class="form-control" placeholder="@imgAltPlaceholderCZEN">
+        <span asp-validation-for="ImageAltEN" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">@buttonName</button>
+</form>

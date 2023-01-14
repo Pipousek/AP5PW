@@ -1,0 +1,87 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model RegisterViewModel
+@{
+    string signCZEN, signFB, signGoogle, orCZEN;
+    string title, signUp;
+    string phUsername, phPassword, phName, phSurrname, phPhone, phEmail, phPasswordRepeat;
+
+    if (LanguageConfig.Language == "EN")
+    {
+        signCZEN = "Sign in to existing account";
+        signFB = "Sign up with Facebook";
+        signGoogle = "Sign up with Google+";
+        orCZEN = "OR";
+        title = "Sign up";
+        signUp = "Sign up new account";
+        phUsername = "Username";
+        phPassword = "Password";
+        phName = "First name";
+        phSurrname = "Last name";
+        phPhone = "Phone";
+        phEmail = "E-mail";
+        phPasswordRepeat = "Repeat Password";
+    }
+    else
+    {
+        signCZEN = "Přihlásit se přes existující účet";
+        signFB = "Registrovat se přes Facebook";
+        signGoogle = "Registrovat se přes Google+";
+        orCZEN = "NEBO";
+        title = "Registrace";
+        signUp = "Zaregistrovat se";
+        phUsername = "Uživatelské jméno";
+        phPassword = "Heslo";
+        phName = "Jméno";
+        phSurrname = "Příjmení";
+        phPhone = "Telefonní číslo";
+        phEmail = "E-mail";
+        phPasswordRepeat = "Znovu heslo";
+    }
+
+    ViewData["Title"] = "Register";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+<div id="logreg-forms">
+    <form asp-action="Register" method="post" class="form-signup">
+        <br />
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">@title</h1>
+        <div class="social-login">
+            <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i>@signFB</span> </button>
+        </div>
+        <div class="social-login">
+            <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i>@signGoogle</span> </button>
+        </div>
+
+        <br />
+        <p style="text-align:center">@orCZEN</p>
+        <hr>
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <input asp-for="Username" type="text" id="user-name" class="form-control" placeholder="@phUsername" autofocus="">
+        <span asp-validation-for="Username" class="text-danger"></span>
+        <input asp-for="FirstName" type="text" id="first-name" class="form-control" placeholder="@phName" autofocus="">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+        <input asp-for="LastName" type="text" id="last-name" class="form-control" placeholder="@phSurrname" autofocus="">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+        <input asp-for="Email" type="email" id="user-email" class="form-control" placeholder="@phEmail" autofocus="">
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <input asp-for="Phone" type="tel" id="user-phone" class="form-control" placeholder="@phPhone" autofocus="">
+        <span asp-validation-for="Phone" class="text-danger"></span>
+        <br />
+        <input asp-for="Password" type="password" id="user-pass" class="form-control" placeholder="@phPassword" autofocus="">
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <input asp-for="RepeatedPassword" type="password" id="user-repeatpass" class="form-control" placeholder="@phPasswordRepeat" autofocus="">
+        <span asp-validation-for="RepeatedPassword" class="text-danger"></span>
+        <br />
+
+        <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i>@signUp</button>
+        <br />
+        <br />
+        <hr>
+        <a asp-action="Login" class="btn btn-success btn-block text-white" type="button" id="btn-signin"><i class="fas fa-sign-in-alt"></i>@signCZEN</a>
+    </form>
+</div>

@@ -1,0 +1,73 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model List<CarouselItem>
+@{
+	string createCarouselItem, carouselItemConfig;
+	string id, imgSrcCZEN, imgAltCZ, imgAltEN;
+	string buttonEdit, buttonDelete;
+	if (LanguageConfig.Language == "EN")
+	{
+		createCarouselItem = "Create New Carousel Item";
+		carouselItemConfig = "Carousel Item Configuration";
+		id = "ID";
+		imgSrcCZEN = "Image Source Path";
+		imgAltCZ = "Image Alternative Text - CZ";
+		imgAltEN = "Image Alternative Text - EN";
+		buttonEdit = "Edit";
+		buttonDelete = "Delete";
+	}
+	else
+	{
+		createCarouselItem = "Vytvořit Nový Carousel Item";
+		carouselItemConfig = "Správa Položek Carouselu";
+		id = "ID";
+		imgSrcCZEN = "Zdrojová Cesta Obrázku";
+		imgAltCZ = "Alternativní text obrázku - CZ";
+		imgAltEN = "Alternativní text obrázku - EN";
+		buttonEdit = "Upravit";
+		buttonDelete = "Smazat";
+	}
+
+	ViewData["Title"] = carouselItemConfig;
+}
+<h1>@ViewData["Title"]</h1>
+
+<a asp-action="Create">@createCarouselItem</a>
+@{
+	if (Model != null && Model.Count > 0)
+	{
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">@id</th>
+					<th scope="col">@imgSrcCZEN</th>
+					<th scope="col">@imgAltCZ</th>
+					<th scope="col">@imgAltEN</th>
+					<th scope="col">@buttonEdit</th>
+					<th scope="col">@buttonDelete</th>
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					foreach (var carouselItem in Model)
+					{
+						<tr>
+							<th scope="row">@carouselItem.ID</th>
+							<td>@carouselItem.ImageSrc</td>
+							<td>@carouselItem.ImageAltCZ</td>
+							<td>@carouselItem.ImageAltEN</td>
+							<td><a asp-action="Edit" asp-route-ID="@carouselItem.ID">@buttonEdit</a></td>
+							<td>
+								<a asp-action="Delete" asp-route-ID="@carouselItem.ID" onclick="return ConfirmDelete();">@buttonDelete</a>
+							</td>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	}
+}
+
+@section Scripts
+	{
+	<script src="~/js/dialogs.js"></script>
+}

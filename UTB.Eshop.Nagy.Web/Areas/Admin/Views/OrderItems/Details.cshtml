@@ -1,0 +1,73 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.OrderItem
+
+@{
+	string detailCZEN, orderItemCZEN;
+	string buttonEdit, buttonBack;
+	string amountCZEN, priceCZEN, orderCZEN, productCZEN;
+	if (LanguageConfig.Language == "EN")
+	{
+		detailCZEN = "Detail";
+		orderItemCZEN = "Order item";
+		buttonEdit = "Edit";
+		buttonBack = "Back to list";
+		amountCZEN = "Amount";
+		priceCZEN = "Price";
+		orderCZEN = "Order ID";
+		productCZEN = "Product ID";
+	}
+	else
+	{
+		detailCZEN = "Podrobnosti";
+		orderItemCZEN = "Objednaná položka";
+		buttonEdit = "Upravit";
+		buttonBack = "Zpět na seznam";
+		amountCZEN = "Množství";
+		priceCZEN = "Cena";
+		orderCZEN = "ID Objednávky";
+		productCZEN = "ID Produktu";
+	}
+
+	ViewData["Title"] = "Details";
+}
+
+<h1>@detailCZEN</h1>
+
+<div>
+	<h4>@orderItemCZEN</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			<!-- @Html.DisplayNameFor(model => model.Amount) -->
+			@amountCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Amount)
+		</dd>
+		<dt class="col-sm-2">
+			<!-- @Html.DisplayNameFor(model => model.Price) -->
+			@priceCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Price)
+		</dd>
+		<dt class="col-sm-2">
+			<!-- @Html.DisplayNameFor(model => model.Order) -->
+			@orderCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Order.OrderNumber)
+		</dd>
+		<dt class="col-sm-2">
+			<!-- @Html.DisplayNameFor(model => model.Product) -->
+			@productCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Product.ID)
+		</dd>
+	</dl>
+</div>
+<div>
+	<a asp-action="Edit" asp-route-id="@Model.ID">@buttonEdit</a> |
+	<a asp-action="Index">@buttonBack</a>
+</div>

@@ -1,0 +1,64 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.Order
+
+@{
+    string orderNumberCZEN, totalPriceCZEN, userCZEN;
+    string buttonBack, buttonSave;
+    string createCZEN, orderCZEN;
+
+    if (LanguageConfig.Language == "EN")
+    {
+        orderNumberCZEN = "Order number";
+        totalPriceCZEN = "Total price";
+        userCZEN = "User ID";
+        createCZEN = "Create";
+        orderCZEN = "Order";
+        buttonBack = "Back to list";
+        buttonSave = "Submit";
+    }
+    else
+    {
+        orderNumberCZEN = "Číslo objednávky";
+        totalPriceCZEN = "Celková cena";
+        userCZEN = "ID uživatele";
+        createCZEN = "Vytvořit";
+        orderCZEN = "Objednávka";
+        buttonBack = "Zpět na seznam";
+        buttonSave = "Potvrdit";
+    }
+    ViewData["Title"] = "Create";
+}
+
+<h1>@createCZEN</h1>
+
+<h4>@orderCZEN</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrderNumber" class="control-label">@orderNumberCZEN</label>
+                <input asp-for="OrderNumber" class="form-control" />
+                <span asp-validation-for="OrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label">@totalPriceCZEN</label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label">@userCZEN</label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@buttonSave" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@buttonBack</a>
+</div>
+

@@ -1,0 +1,85 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model IEnumerable<UTB.Eshop.Nagy.Web.Models.Entities.Order>
+
+@{
+    string dateTimeCZEN, orderNumberCZEN, totalPriceCZEN, userCZEN;
+    string createCZEN, titleCZEN;
+    string buttonEdit, buttonDelete, buttonDetail;
+    if(LanguageConfig.Language == "EN")
+    {
+        dateTimeCZEN = "Date and time of purchase";
+        orderNumberCZEN = "Order number";
+        totalPriceCZEN = "Total price";
+        userCZEN = "User ID";
+        createCZEN = "Create New Order";
+        titleCZEN = "Orders";
+        buttonEdit = "Edit";
+        buttonDelete = "Delete";
+        buttonDetail = "Details";
+    }
+    else
+    {
+        dateTimeCZEN = "Datum a čas vytvoření";
+        orderNumberCZEN = "Číslo objednávky";
+        totalPriceCZEN = "Celková cena";
+        userCZEN = "ID uživatele";
+        createCZEN = "Vytvořit novou objednávku";
+        titleCZEN = "Objednávky";
+        buttonEdit = "Upravit";
+        buttonDelete = "Smazat";
+        buttonDetail = "Podrobnosti";
+    }
+    ViewData["Title"] = "Index";
+}
+
+<h1>@titleCZEN</h1>
+
+<p>
+    <a asp-action="Create">@createCZEN</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <!-- @Html.DisplayNameFor(model => model.DateTimeCreated) -->
+                @dateTimeCZEN
+            </th>
+            <th>
+                <!-- @Html.DisplayNameFor(model => model.OrderNumber) -->
+                @orderNumberCZEN
+            </th>
+            <th>
+                <!-- @Html.DisplayNameFor(model => model.TotalPrice) -->
+                @totalPriceCZEN
+            </th>
+            <th>
+                <!-- @Html.DisplayNameFor(model => model.User) -->
+                @userCZEN
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">@buttonEdit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">@buttonDetail</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">@buttonDelete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

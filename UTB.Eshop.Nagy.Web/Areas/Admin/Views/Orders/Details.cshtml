@@ -1,0 +1,73 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.Order
+
+@{
+    string dateTimeCZEN, orderNumberCZEN, totalPriceCZEN, userCZEN;
+    string buttonEdit, buttonBack;
+    string detailCZEN, orderCZEN;
+    if(LanguageConfig.Language == "EN")
+    {
+        dateTimeCZEN = "Date & time of purchase";
+        orderNumberCZEN = "Order number";
+        totalPriceCZEN = "Total price";
+        userCZEN = "User ID";
+        buttonEdit = "Edit";
+        buttonBack = "Back to list";
+        detailCZEN = "Detail";
+        orderCZEN = "Order";
+    }
+    else
+    {
+        dateTimeCZEN = "Datum a čas vytvoření";
+        orderNumberCZEN = "Číslo objednávky";
+        totalPriceCZEN = "Celková cena";
+        userCZEN = "ID uživatele";
+        buttonEdit = "Upravit";
+        buttonBack = "Zpět na seznam";
+        detailCZEN = "Podrobnosti";
+        orderCZEN = "Objednávka";
+    }
+
+    ViewData["Title"] = "Details";
+}
+
+<h1>@detailCZEN</h1>
+
+<div>
+    <h4>@orderCZEN</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.DateTimeCreated) -->
+            @dateTimeCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateTimeCreated)
+        </dd>
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.OrderNumber) -->
+            @orderNumberCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.TotalPrice) -->
+            @totalPriceCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.User) -->
+            @userCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">@buttonEdit</a> |
+    <a asp-action="Index">@buttonBack</a>
+</div>

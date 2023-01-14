@@ -1,0 +1,102 @@
+﻿@using UTB.Eshop.Nagy.Web.Models.Database.Configuration;
+@model UTB.Eshop.Nagy.Web.Models.Entities.Product
+
+@{
+	string buttonEdit, buttonBack;
+	string detailCZEN, titleCZEN, nameEN, nameCZ, descEN, descCZ;
+	string priceCZEN, imgSrcCZEN, descImgSrcCZEN, warrantyCZEN;
+
+	if (LanguageConfig.Language == "EN")
+	{
+		buttonEdit = "Edit";
+		buttonBack = "Back to list";
+		detailCZEN = "Details";
+		titleCZEN = "Product";
+		nameEN = "Product Name - EN";
+        nameCZ = "Product Name - CZ";
+		descEN = "Description - EN";
+        descCZ = "Description - CZ";
+		priceCZEN = "Price";
+		imgSrcCZEN = "Image Source";
+		descImgSrcCZEN = "Desc. Img Source";
+		warrantyCZEN = "Warranty";
+	}
+	else
+	{
+		buttonEdit = "Upravit";
+		buttonBack = "Zpět na seznam";
+		detailCZEN = "Podrobnosti";
+		titleCZEN = "Produkt";
+		nameEN = "Název produktu - EN";
+        nameCZ = "Název produktu - CZ";
+		descEN = "Podrobnosti - EN";
+		descCZ = "Podrobnosti - CZ";
+		priceCZEN = "Cena";
+		imgSrcCZEN = "Cesta obrázku";
+		descImgSrcCZEN = "Cesta obr. podrob.";
+		warrantyCZEN = "Záruka";
+	}
+
+	ViewData["Title"] = "Details";
+}
+
+<h1>@detailCZEN</h1>
+
+<div>
+    <h4>@titleCZEN</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @nameCZ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NameCZ)
+        </dd>
+		<dt class = "col-sm-2">
+            @nameEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NameEN)
+        </dd>
+        <dt class = "col-sm-2">
+            @priceCZEN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+		<dt class="col-sm-2">
+			@imgSrcCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.imageSrc)
+		</dd>
+		<dt class="col-sm-2">
+			@descImgSrcCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.DescriptionImageSrc)
+		</dd>
+		<dt class = "col-sm-2">
+            @descCZ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescriptionCZ)
+        </dd>
+		<dt class="col-sm-2">
+			@descEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.DescriptionEN)
+		</dd>
+		<dt class="col-sm-2">
+			@warrantyCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Warranty)
+		</dd>
+	</dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">@buttonEdit</a> |
+    <a asp-action="Index">@buttonBack</a>
+</div>
