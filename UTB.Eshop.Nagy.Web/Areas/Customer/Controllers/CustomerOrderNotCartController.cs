@@ -43,12 +43,19 @@ namespace UTB.Eshop.Nagy.Web.Areas.Customer.Controllers
 
             if (product != null)
             {
+                double actualPrice = product.discountPrice;
+                if(product.discountPrice == 0.0)
+                {
+                    actualPrice = product.Price;
+                }
+
                 OrderItem orderItem = new OrderItem()
                 {
                     ProductID = product.ID,
                     Product = product,
                     Amount = 1,
-                    Price = product.Price   //zde pozor na datový typ -> pokud máte Price v obou případech double nebo decimal, tak je to OK. Mě se bohužel povedlo mít to jednou jako decimal a jednou jako double. Nejlepší je datový typ změnit v databázi/třídě, tak to prosím udělejte.
+                    Price = actualPrice
+                    
                 };
 
                 if (HttpContext.Session.IsAvailable)
@@ -65,7 +72,7 @@ namespace UTB.Eshop.Nagy.Web.Areas.Customer.Controllers
                     if (orderItemInSession != null)
                     {
                         ++orderItemInSession.Amount;
-                        orderItemInSession.Price += orderItem.Product.Price;   //zde pozor na datový typ -> pokud máte Price v obou případech double nebo decimal, tak je to OK. Mě se bohužel povedlo mít to jednou jako decimal a jednou jako double. Nejlepší je datový typ změnit v databázi/třídě, tak to prosím udělejte.
+                        orderItemInSession.Price += orderItem.Price;   //zde pozor na datový typ -> pokud máte Price v obou případech double nebo decimal, tak je to OK. Mě se bohužel povedlo mít to jednou jako decimal a jednou jako double. Nejlepší je datový typ změnit v databázi/třídě, tak to prosím udělejte.
                     }
                     else
                     {
@@ -75,7 +82,7 @@ namespace UTB.Eshop.Nagy.Web.Areas.Customer.Controllers
 
                     HttpContext.Session.SetObject(orderItemsString, orderItems);
 
-                    totalPrice += orderItem.Product.Price;
+                    totalPrice += orderItem.Price;
                     HttpContext.Session.SetDouble(totalPriceString, totalPrice);
                 }
             }
@@ -97,7 +104,7 @@ namespace UTB.Eshop.Nagy.Web.Areas.Customer.Controllers
                 {
                     foreach (OrderItem orderItem in orderItems)
                     {
-                        totalPrice += orderItem.Product.Price * orderItem.Amount;
+                        totalPrice += orderItem.Price * orderItem.Amount;
                         orderItem.Product = null; //zde musime nullovat referenci na produkt, jinak by doslo o pokus jej znovu vlozit do databaze
                     }
 

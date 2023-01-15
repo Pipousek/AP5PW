@@ -258,10 +258,12 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DescriptionCZ")
+                        .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("varchar(5000)");
 
                     b.Property<string>("DescriptionEN")
+                        .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("varchar(5000)");
 
@@ -286,6 +288,9 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
 
+                    b.Property<double>("discountPrice")
+                        .HasColumnType("double");
+
                     b.Property<string>("imageSrc")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -304,8 +309,9 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                             DescriptionImageSrc = "/img/product/descriptionImg/BananaPhone.jpg",
                             NameCZ = "Banán Telefon (Žlutá)",
                             NameEN = "Banana Phone (Yellow)",
-                            Price = 1999.9000000000001,
+                            Price = 2899.9000000000001,
                             Warranty = 6,
+                            discountPrice = 1999.9000000000001,
                             imageSrc = "/img/product/homeImg/BananaPhone.jpg"
                         },
                         new
@@ -316,8 +322,9 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                             DescriptionImageSrc = "/img/product/descriptionImg/iPhone3G.jpg",
                             NameCZ = "Apple Iphone 3G 8GB (Černá)",
                             NameEN = "Apple Iphone 3G 8GB (Black)",
-                            Price = 3499.9000000000001,
+                            Price = 4999.8999999999996,
                             Warranty = 24,
+                            discountPrice = 3499.9000000000001,
                             imageSrc = "/img/product/homeImg/iPhone3G.jpg"
                         },
                         new
@@ -328,8 +335,9 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                             DescriptionImageSrc = "/img/product/descriptionImg/MinnieMouseHappyHelpersToyPhone.jpg",
                             NameCZ = "Minnie Mouse Štastný Pomocníčci Hračka Telefon (Růžová)",
                             NameEN = "Minnie Mouse Happy Helpers Toy Phone (Pink)",
-                            Price = 499.89999999999998,
+                            Price = 649.89999999999998,
                             Warranty = 12,
+                            discountPrice = 499.89999999999998,
                             imageSrc = "/img/product/homeImg/MinnieMouseHappyHelpersToyPhone.jpg"
                         },
                         new
@@ -342,6 +350,7 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                             NameEN = "Nokkia 3310 (Undestroyable)",
                             Price = 7999.8999999999996,
                             Warranty = 60,
+                            discountPrice = 0.0,
                             imageSrc = "/img/product/homeImg/Nokia3310.jpg"
                         },
                         new
@@ -352,8 +361,9 @@ namespace UTB.Eshop.Nagy.Web.Migrations
                             DescriptionImageSrc = "/img/product/descriptionImg/SamsungGalaxyZFlip4.jpg",
                             NameCZ = "Samsung Galaxy Z Flip4 128GB (Černá)",
                             NameEN = "Samsung Galaxy Z Flip4 128GB (Black)",
-                            Price = 34949.900000000001,
+                            Price = 54299.900000000001,
                             Warranty = 36,
+                            discountPrice = 34949.900000000001,
                             imageSrc = "/img/product/homeImg/SamsungGalaxyZFlip4.jpg"
                         });
                 });

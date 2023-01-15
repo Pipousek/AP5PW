@@ -7987,11 +7987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web.csproj",
+      "projectUniqueName": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web.csproj",
       "projectName": "UTB.Eshop.Nagy.Web",
-      "projectPath": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web.csproj",
+      "projectPath": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web.csproj",
       "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web\\obj\\",
+      "outputPath": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Petr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8008,8 +8008,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Implementation\\UTB.Eshop.Nagy.Domain.Implementation.csproj": {
-              "projectPath": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Implementation\\UTB.Eshop.Nagy.Domain.Implementation.csproj"
+            "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Implementation\\UTB.Eshop.Nagy.Domain.Implementation.csproj": {
+              "projectPath": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Implementation\\UTB.Eshop.Nagy.Domain.Implementation.csproj"
             }
           }
         }

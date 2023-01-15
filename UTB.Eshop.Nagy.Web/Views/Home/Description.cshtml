@@ -4,18 +4,19 @@
 	ViewData["Title"] = "Description";
 
 	// Variables
-	double productPrice = Math.Round(Model.Price + ((Model.Price / 100) * 30), 2);
+	double productPrice = Model.Price;
+	double priceDiscount = Model.discountPrice;
+	double discount = Math.Floor(((productPrice - priceDiscount) / productPrice) * 100);
 	string imgSrc = Model.DescriptionImageSrc;
-	double priceDiscount = Model.Price;
 	int produktID = Model.ID;
 	string productName, productDescription, buttonName, warrantyCZEN, discountCZEN;
-	if(LanguageConfig.Language == "EN")
+	if (LanguageConfig.Language == "EN")
 	{
 		productName = Model.NameEN;
 		productDescription = Model.DescriptionEN;
 		buttonName = "Add To Chart";
 		warrantyCZEN = $"Warranty {Model.Warranty} months";
-		discountCZEN = "DISCOUNT 30%";
+		discountCZEN = $"DISCOUNT {discount}%";
 	}
 	else
 	{
@@ -23,35 +24,46 @@
 		productDescription = Model.DescriptionCZ;
 		buttonName = "Do košíku";
 		warrantyCZEN = $"Záruka {Model.Warranty} měsíců";
-		discountCZEN = "ZLEVNĚNO 30%";
+		discountCZEN = $"ZLEVNĚNO {discount}%";
 	}
 }
 @{
-		<section class="py-5">
-			<div class="container px-4 px-lg-5 my-5">
-				<div class="row gx-4 gx-lg-5 align-items-center">
-					<div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="@imgSrc" alt="@productName" /></div>
-					<div class="col-md-6">
-						<h1 class="display-5 fw-bolder">@productName</h1>
-						<div class="fs-5 mb-2 align-items-center row">
-							<div class="col-4">
-								<div class="border rounded-top bg-warning text-black fs-6 mb-0 font-weight-bold text-center">@discountCZEN</div>
-								<div class="border rounded-bottom bg-danger text-white mt-0 text-center">
-									<p class="fs-5 text-decoration-line-through my-1">@productPrice ,-</p>
-									<p class="fs-3 font-weight-bold my-1">@priceDiscount ,-</p>
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 my-5">
+			<div class="row gx-4 gx-lg-5 align-items-center">
+				<div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="@imgSrc" alt="@productName" /></div>
+				<div class="col-md-6">
+					<h1 class="display-5 fw-bolder">@productName</h1>
+					<div class="fs-5 mb-2 align-items-center row">
+						@{
+							if (priceDiscount == 0.0)
+							{
+								<div class="col-4">
+									<p class="fs-3 font-weight-bold my-1">@productPrice ,-</p>
 								</div>
-							</div>
-							<div class="col-4"></div>
-							<div class="col-4 text-center">
+							}
+							else
+							{
+								<div class="col-4">
+									<div class="border rounded-top bg-warning text-black fs-6 mb-0 font-weight-bold text-center">@discountCZEN</div>
+									<div class="border rounded-bottom bg-danger text-white mt-0 text-center">
+										<p class="fs-5 text-decoration-line-through my-1">@productPrice ,-</p>
+										<p class="fs-3 font-weight-bold my-1">@priceDiscount ,-</p>
+									</div>
+								</div>
+							}
+						}
+						<div class="col-4"></div>
+						<div class="col-4 text-center">
 							<button type="button" class="btn bg-success text-white font-weight-bold fs-5 p-3" style="box-shadow: 0 12px 10px -3px gray;" onclick="Buy(@Model.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrderNotCart", new { Area = "Customer" })', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name')">@buttonName</button>
-							</div>
 						</div>
-						<div class="opacity-75 mb-3 fs-5">@warrantyCZEN</div>
-						<p class="lead">@productDescription</p>
 					</div>
+					<div class="opacity-75 mb-3 fs-5">@warrantyCZEN</div>
+					<p class="lead">@productDescription</p>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 }
 
 @section Scripts

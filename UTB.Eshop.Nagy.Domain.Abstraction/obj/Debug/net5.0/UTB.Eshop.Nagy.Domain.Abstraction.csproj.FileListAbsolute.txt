@@ -10,3 +10,15 @@ C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstracti
 C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\refint\UTB.Eshop.Nagy.Domain.Abstraction.dll
 C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.pdb
 C:\Users\Petr\Documents\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\ref\UTB.Eshop.Nagy.Domain.Abstraction.dll
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.deps.json
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.dll
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\bin\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.pdb
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.csproj.AssemblyReference.cache
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.GeneratedMSBuildEditorConfig.editorconfig
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.AssemblyInfoInputs.cache
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.AssemblyInfo.cs
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.csproj.CoreCompileInputs.cache
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.dll
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\refint\UTB.Eshop.Nagy.Domain.Abstraction.dll
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\UTB.Eshop.Nagy.Domain.Abstraction.pdb
+D:\UTB\5_Semestr\AP5PW\UTB.Eshop.Nagy.Web\UTB.Eshop.Nagy.Domain.Abstraction\obj\Debug\net5.0\ref\UTB.Eshop.Nagy.Domain.Abstraction.dll

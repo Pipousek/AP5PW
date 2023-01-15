@@ -4,10 +4,10 @@
 	ViewData["Title"] = "Home Page";
 
 	// Used down in generating item for shop
-	string productName, imgSrc, carouselImgAlt;
-	double productPrice;
+	string productName, imgSrc, discountCZEN;
+	double productPrice, priceDiscount, discount;
 
-	string welcomeMessage, buyButton, descriptionButton;
+	string buyButton, descriptionButton;
 	if (LanguageConfig.Language == "EN")
 	{
 		buyButton = "Add To Chart";
@@ -86,14 +86,18 @@
 						foreach (var product in Model.Products)
 						{
 							productPrice = product.Price;
+							priceDiscount = product.discountPrice;
+							discount = Math.Floor(((productPrice - priceDiscount) / productPrice) * 100);
 							imgSrc = product.imageSrc;
 							if (LanguageConfig.Language == "EN")
 							{
 								productName = product.NameEN;
+								discountCZEN = $"DISCOUNT {discount}%";
 							}
 							else
 							{
 								productName = product.NameCZ;
+								discountCZEN = $"ZLEVNĚNO {discount}%";
 							}
 							<div class="col mb-5">
 								<div class="card h-100">
@@ -108,10 +112,25 @@
 									</div>
 									<!-- Product actions-->
 									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-										<div class="text-center text-danger font-weight-bold">
-											<!-- Product price-->
-											<h5>@productPrice ,-</h5>
-										</div>
+										@{
+											if (priceDiscount == 0.0)
+											{
+												<div class="text-center text-danger">
+													<!-- Product price-->
+													<h5 class="font-weight-bold">@productPrice ,-</h5>
+												</div>
+											}
+											else
+											{
+												<div class="text-center text-danger font-weight-bold">
+													<div class="border rounded-top bg-warning text-black fs-6 mb-0 font-weight-bold text-center">@discountCZEN</div>
+													<!-- Product price-->
+													<div class="border rounded-bottom bg-danger text-white mt-0 text-center">
+														<p class="fs-5 font-weight-bold mb-1">@priceDiscount ,-</p>
+													</div>
+												</div>
+											}
+										}
 										<div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-area="" asp-controller="Home" asp-action="Description" asp-route-id="@product.ID">@descriptionButton</a></div>
 										<div class="text-center mt-2">
 											<button type="button" class="btn bg-white border-3 btn-outline-success text-black font-weight-bold fs-6 p-2" style="box-shadow: 0 12px 10px -3px gray;" onclick="Buy(@product.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrderNotCart", new { Area = "Customer" })', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name')">@buyButton</button>

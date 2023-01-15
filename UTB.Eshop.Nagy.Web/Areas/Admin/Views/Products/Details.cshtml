@@ -4,7 +4,7 @@
 @{
 	string buttonEdit, buttonBack;
 	string detailCZEN, titleCZEN, nameEN, nameCZ, descEN, descCZ;
-	string priceCZEN, imgSrcCZEN, descImgSrcCZEN, warrantyCZEN;
+	string priceCZEN, discountPriceCZEN, imgSrcCZEN, descImgSrcCZEN, warrantyCZEN;
 
 	if (LanguageConfig.Language == "EN")
 	{
@@ -17,6 +17,7 @@
 		descEN = "Description - EN";
         descCZ = "Description - CZ";
 		priceCZEN = "Price";
+		discountPriceCZEN = "Price After Discount";
 		imgSrcCZEN = "Image Source";
 		descImgSrcCZEN = "Desc. Img Source";
 		warrantyCZEN = "Warranty";
@@ -32,6 +33,7 @@
 		descEN = "Podrobnosti - EN";
 		descCZ = "Podrobnosti - CZ";
 		priceCZEN = "Cena";
+		discountPriceCZEN = "Cena po slevě";
 		imgSrcCZEN = "Cesta obrázku";
 		descImgSrcCZEN = "Cesta obr. podrob.";
 		warrantyCZEN = "Záruka";
@@ -64,6 +66,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
+		<dt class="col-sm-2">
+			@discountPriceCZEN
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.discountPrice)
+		</dd>
 		<dt class="col-sm-2">
 			@imgSrcCZEN
 		</dt>

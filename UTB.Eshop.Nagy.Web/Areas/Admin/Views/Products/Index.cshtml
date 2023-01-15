@@ -4,7 +4,7 @@
 @{
 	string buttonEdit, buttonDelete, buttonDetail;
 	string titleCZEN, nameCZEN, descriptionCZEN, createCZEN;
-	string priceCZEN, imgSrcCZEN, descImgSrcCZEN, warrantyCZEN;
+	string priceCZEN, discountPriceCZEN, imgSrcCZEN, descImgSrcCZEN, warrantyCZEN;
 
 	if (LanguageConfig.Language == "EN")
 	{
@@ -16,6 +16,7 @@
 		descriptionCZEN = "Description";
 		createCZEN = "Create New Product";
 		priceCZEN = "Price";
+		discountPriceCZEN = "Price After Discount";
 		imgSrcCZEN = "Image Source";
 		descImgSrcCZEN = "Desc. Img Source";
 		warrantyCZEN = "Warranty";
@@ -30,6 +31,7 @@
 		descriptionCZEN = "Podrobnosti";
 		createCZEN = "Vytvořit nový produkt";
 		priceCZEN = "Cena";
+		discountPriceCZEN = "Cena po slevě";
 		imgSrcCZEN = "Cesta obrázku";
 		descImgSrcCZEN = "Cesta obr. podr.";
 		warrantyCZEN = "Záruka";
@@ -56,6 +58,9 @@
 			</th>
 			<th>
 				@priceCZEN
+			</th>
+			<th>
+				@discountPriceCZEN
 			</th>
 			<th>
 				@imgSrcCZEN
@@ -114,6 +119,9 @@
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Price)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.discountPrice)
 				</td>
 				<td>
 					...@item.imageSrc.Substring(item.imageSrc.Length -17)

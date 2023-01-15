@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj": {}
+    "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj": {
+    "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj",
+        "projectUniqueName": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj",
         "projectName": "UTB.Eshop.Nagy.Domain.Abstraction",
-        "projectPath": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj",
+        "projectPath": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\UTB.Eshop.Nagy.Domain.Abstraction.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petr\\Documents\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\obj\\",
+        "outputPath": "D:\\UTB\\5_Semestr\\AP5PW\\UTB.Eshop.Nagy.Web\\UTB.Eshop.Nagy.Domain.Abstraction\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petr\\AppData\\Roaming\\NuGet\\NuGet.Config",
